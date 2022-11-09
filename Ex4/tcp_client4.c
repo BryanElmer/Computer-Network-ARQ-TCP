@@ -1,6 +1,6 @@
 #include "headsock.h"
 
-#define BATCH_SIZE 1
+#define BATCH_SIZE 4
 
 float str_cli(FILE *fp, int sockfd, long *len);  //transmit function
 void tv_sub(struct  timeval *out, struct timeval *in);  //calculate time
@@ -132,7 +132,7 @@ float str_cli(FILE *fp, int sockfd, long *len) {
 	    }
 
         // Checks ack
-        if (ack.num != BATCH_SIZE || ack.len != BATCH_SIZE) {
+        if (ack.num != 1 || ack.len != 1) {
             printf("Error in transmission!\n");
         }
     }

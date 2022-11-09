@@ -1,7 +1,7 @@
 #include "headsock.h"
 
 #define BACKLOG 10
-#define BATCH_SIZE 1
+#define BATCH_SIZE 4
 
 void str_ser(int sockfd);
 
@@ -94,8 +94,8 @@ void str_ser(int sockfd) {
 		lseek += n;
 
         if (recvPacket.num == BATCH_SIZE || end == 1) {  // Sends ack after every batch
-            ack.num = BATCH_SIZE;
-            ack.len = BATCH_SIZE;
+            ack.num = 1;
+            ack.len = 1;
             if ((n = send(sockfd, &ack, 2, 0)) == -1) {
                 printf("Send ack error!\n");
                 exit(1);
