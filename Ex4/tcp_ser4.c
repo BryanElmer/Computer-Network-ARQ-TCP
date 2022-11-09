@@ -1,7 +1,7 @@
 #include "headsock.h"
 
 #define BACKLOG 10
-#define BATCH_SIZE 4
+#define BATCH_SIZE 1
 
 void str_ser(int sockfd);
 

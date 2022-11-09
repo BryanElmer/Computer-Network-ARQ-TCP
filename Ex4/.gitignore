@@ -1,7 +1,3 @@
-calc.py
-data.txt
-ser4
-tcp_client4
-tcp_ser4
+dataCollection/cli_data
+dataCollection/ser4
 cli
-tcp_client4_data.c
